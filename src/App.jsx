@@ -1,23 +1,31 @@
 import "./App.css";
-import Rasm from "./assets/rasm.webp";
-import Welcome from "./components/Welcome";
-import Car from "./components/Car";
+import { Routes, Route, Link } from "react-router";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
     <>
-      <div>
-        <img src={Rasm} width={200} alt="rasm" />
-        <h1>Abbosbek</h1>
-        <Welcome lang={"React JS"} />
-        <Welcome lang={"Python"} />
-        <Welcome lang={"C++"} />
-        <Car name={"Lamborghini Urus"} description={"This is my lovely car"} />
-        <Car
-          name={"Chevrolet Malibu"}
-          description={"Uzbek great and popular car"}
-        />
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        {/* products */}
+        {/* shop */}
+        {/* cart */}
+        {/* payment */}
+        {/* contacts */}
+      </Routes>
     </>
   );
 }
