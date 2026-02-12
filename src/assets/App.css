@@ -125,10 +125,6 @@ nav ul li a {
     text-align: center;
 }
 
-.text h1 {
-    font-size: 32px;
-}
-
 .card:hover {
     box-shadow: 2px 2px 2px #909090;
     transition: all 0.3s;
