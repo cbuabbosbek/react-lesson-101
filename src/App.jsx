@@ -7,41 +7,20 @@ import Contacts from "./pages/Contacts";
 import Payment from "./pages/Payment";
 import Shop from "./pages/Shop";
 import Movies from "./pages/Movies";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
     <>
-      <nav>
-        <div className="logo">A-SHOP</div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
-            <Link to="/Cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/Contacts">Contact</Link>
-          </li>
-          <li>
-            <Link to="/Payment">Payment</Link>
-          </li>
-          <li>
-            <Link to="/Shop">Shop</Link>
-          </li>
-        </ul>
-      </nav>
-
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/movies" element={<Movies />}></Route>
-        <Route path="/Cart" element={<Cart />}></Route>
-        <Route path="/Contacts" element={<Contacts />}></Route>
-        <Route path="/Payment" element={<Payment />}></Route>
-        <Route path="/Shop" element={<Shop />}></Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="/movies" element={<Movies />}></Route>
+          <Route path="/Cart" element={<Cart />}></Route>
+          <Route path="/Contacts" element={<Contacts />}></Route>
+          <Route path="/Payment" element={<Payment />}></Route>
+          <Route path="/Shop" element={<Shop />}></Route>
+        </Route>
         {/* products */}
         {/* shop */}
         {/* cart */}
